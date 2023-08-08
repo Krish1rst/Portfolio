@@ -30,9 +30,27 @@ function PageTransitions() {
   })
   // togle theme
   const themeBtn = document.querySelector('.theme-btn');
-  themeBtn.addEventListener('click', () => {
-    let element = document.body;
-    element.classList.toggle('light-mode');
-  })
+const element = document.body;
+
+// Check if a theme is already stored in local storage
+const storedTheme = localStorage.getItem('selectedTheme');
+
+if (storedTheme === 'light-mode') {
+  element.classList.add('light-mode');
+} else {
+  element.classList.remove('light-mode'); // Make sure dark mode is applied by default
+}
+
+themeBtn.addEventListener('click', () => {
+  element.classList.toggle('light-mode');
+
+  // Update the selected theme in local storage
+  if (element.classList.contains('light-mode')) {
+    localStorage.setItem('selectedTheme', 'light-mode');
+  } else {
+    localStorage.removeItem('selectedTheme');
+  }
+});
+
 }
 PageTransitions();
