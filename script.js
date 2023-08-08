@@ -28,7 +28,7 @@ function PageTransitions() {
       element.classList.add('active');
     }
   })
-  // togle theme
+  // toggle theme
   const themeBtn = document.querySelector('.theme-btn');
 const element = document.body;
 
@@ -38,8 +38,7 @@ const storedTheme = localStorage.getItem('selectedTheme');
 if (storedTheme === 'light-mode') {
   element.classList.add('light-mode');
 } else {
-  element.classList.remove('light-mode'); 
-  // Make sure dark mode is applied by default
+  element.classList.remove('light-mode'); // Make sure dark mode is applied by default
 }
 
 themeBtn.addEventListener('click', () => {
