@@ -9,26 +9,36 @@ function PageTransitions() {
       let currentBtn = document.querySelectorAll('.active-btn');
       currentBtn[0].className = currentBtn[0].className.replace('active-btn', '');
       this.className += ' active-btn';
-    })
+
+      // Store active section ID in localStorage
+      const sectionId = this.dataset.id;
+      localStorage.setItem('activeSection', sectionId);
+    });
   }
-  //sections active
+
+  // Retrieve active section from localStorage and show it
+  const activeSection = localStorage.getItem('activeSection');
+  if (activeSection) {
+    sectBtns.forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[data-id="${activeSection}"]`).classList.add('active');
+
+    sections.forEach(section => section.classList.remove('active'));
+    document.getElementById(activeSection).classList.add('active');
+  }
+
   allSections.addEventListener('click', (e) => {
     const id = e.target.dataset.id;
     if (id) {
-      sectBtns.forEach((btn) => {
-        btn.classList.remove('active')
-      })
-      e.target.classList.add('active')
+      sectBtns.forEach(btn => btn.classList.remove('active'));
+      e.target.classList.add('active');
 
-      //hide other sections
-      sections.forEach((section) => {
-        section.classList.remove('active')
-      })
+      sections.forEach(section => section.classList.remove('active'));
       const element = document.getElementById(id);
       element.classList.add('active');
     }
-  })
-  // toggle theme
+  });
+
+  // togle theme
   const themeBtn = document.querySelector('.theme-btn');
 const element = document.body;
 
