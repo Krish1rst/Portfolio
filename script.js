@@ -16,7 +16,7 @@ function PageTransitions() {
     });
   }
 
-  // Retrieve active section from localStorage and show it
+  // Retrieve actives section from localStorage and show it
   const activeSection = localStorage.getItem('activeSection');
   if (activeSection) {
     sectBtns.forEach(btn => btn.classList.remove('active'));
