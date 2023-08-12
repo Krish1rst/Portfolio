@@ -659,7 +659,7 @@ h2 {
 }
 
 .portfolio-item:hover .hover-items {
-  opacity: .7;
+  opacity: .7 ;
   transform: scale(1);
 }
 
