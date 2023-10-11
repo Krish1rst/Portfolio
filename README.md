@@ -1,2 +1,2 @@
 # codealpha_Portfolio
-This is my portfolio website on which I've showcased my skills, works and related projects. 
+A captivating and interactive portfolio website, crafted using HTML, CSS, and JavaScript, featuring smooth transition animations.
